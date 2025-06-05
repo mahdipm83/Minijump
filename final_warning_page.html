@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Notice</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .message-box {
+            font-size: 24px;
+            white-space: pre-line;
+            border: 2px solid #00ff00;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: #111;
+            box-shadow: 0 0 20px #00ff00;
+            direction: rtl;
+            max-width: 90%;
+        }
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            background-color: #00ff00;
+            margin-left: 2px;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="message-box">
+        <span id="typewriter"></span><span class="cursor"></span>
+    </div>
+
+    <script>
+        const text = `حالا که گوشی شما هک شد
+یاد بگیرید دیگه روی لینک ناشناس ضربه نزنید
+کلیه اطلاعات به سیستم victous انتقال داده شده است..
+
+Secure natation.
+Mahdi.poormoradian
+192.700.850.10
+HP victuos13`;
+
+        let i = 0;
+        const speed = 50; // سرعت تایپ (میلی‌ثانیه)
+        const typewriter = document.getElementById("typewriter");
+
+        function type() {
+            if (i < text.length) {
+                typewriter.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            }
+        }
+
+        type();
+    </script>
+</body>
+</html>
